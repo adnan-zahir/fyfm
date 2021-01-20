@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Your Favourite Movies</title>
+    <script>
+        const showAlert = (message) => {
+            const alertBox = document.querySelector("#alert-box");
+            const alertMessage = alertBox.querySelector("#alert-message");
+
+            alertMessage.innerHTML = message;
+            alertBox.style.opacity = "100%";
+
+            setTimeout(() => alertBox.style.opacity = "0%", 3000)
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -14,19 +25,27 @@
                 <div class="line"></div>
             </button>
             <div class="title1 inline">
-                FYFM
+                <a href="javascript:window.location.reload();">FYFM</a>
             </div>
             <div class="searchbar inline">
                 <div class="searchbar-input inline">
                     <input type="search" id="search">
                 </div>
                 <div class="searchbar-button inline">
-                    <input type="submit" id="submit" value=".">
+                    <button id="submit"><i class="gg-search"></i></button>
                 </div>
             </div>
         </div>
     </header>
     <main>
+        <div class="alert-box" id="alert-box" style="opacity: 0%;">
+            <div class="alert-head">
+                <h2>ALERT!</h2>
+            </div>
+            <div class="alert-body">
+                <p id="alert-message"></p>
+            </div>
+        </div>
         <div class="main-content">
             <div class="container">
                 <div class="container-head">
