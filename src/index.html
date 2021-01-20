@@ -10,16 +10,20 @@
             const alertMessage = alertBox.querySelector("#alert-message");
 
             alertMessage.innerHTML = message;
+            alertBox.style.zIndex = "10";
             alertBox.style.opacity = "100%";
 
-            setTimeout(() => alertBox.style.opacity = "0%", 3000)
+            setTimeout(() => {
+                alertBox.style.opacity = "0%";        
+                alertBox.style.zIndex = "-2";
+            }, 3000)
         }
     </script>
 </head>
 <body>
     <header>
         <div class="head-content">
-            <button class="sidebar-button inline">
+            <button class="sidebar-button inline" id="open-sidebar">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
@@ -38,7 +42,7 @@
         </div>
     </header>
     <main>
-        <div class="alert-box" id="alert-box" style="opacity: 0%;">
+        <div class="alert-box" id="alert-box" style="opacity: 0%; z-index: -2;">
             <div class="alert-head">
                 <h2>ALERT!</h2>
             </div>
@@ -57,6 +61,42 @@
                 </div>
             </div>
         </div>
+        <aside data-sidebar>
+            <div class="aside-head">
+                <button id="close-sidebar">
+                    X
+                </button>
+                Filter Menu
+            </div>
+            <div class="aside-body">
+                <div class="category-list">
+                    <span class="list-title">
+                        Genre
+                    </span>
+                    <ul class="list-wrapper" id="list-wrapper">
+                        <li><a href="#" class="genre-list" name="18">Aksi</a></li>
+                        <li><a href="#" class="genre-list" name="12">Petualangan</a></li>
+                        <li><a href="#" class="genre-list" name="16">Animasi</a></li>
+                        <li><a href="#" class="genre-list" name="35">Komedi</a></li>
+                        <li><a href="#" class="genre-list" name="80">Kejahatan</a></li>
+                        <li><a href="#" class="genre-list" name="99">Dokumenter</a></li>
+                        <li><a href="#" class="genre-list" name="18">Drama</a></li>
+                        <li><a href="#" class="genre-list" name="10751">Keluarga</a></li>
+                        <li><a href="#" class="genre-list" name="14">Fantasi</a></li>
+                        <li><a href="#" class="genre-list" name="36">Sejarah</a></li>
+                        <li><a href="#" class="genre-list" name="27">Kengerian</a></li>
+                        <li><a href="#" class="genre-list" name="10402">Musik</a></li>
+                        <li><a href="#" class="genre-list" name="9648">Misteri</a></li>
+                        <li><a href="#" class="genre-list" name="10749">Percintaan</a></li>
+                        <li><a href="#" class="genre-list" name="878">Cerita Fiksi</a></li>
+                        <li><a href="#" class="genre-list" name="10770">Film TV</a></li>
+                        <li><a href="#" class="genre-list" name="53">Certia Seru</a></li>
+                        <li><a href="#" class="genre-list" name="10752">Perang</a></li>
+                        <li><a href="#" class="genre-list" name="37">Barat</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
     </main>
 </body>
 </html>

@@ -67,4 +67,4 @@ const renderMovies = (movies) => {
 
 searchBtn.addEventListener("click", searchMovies);
 
-export { popularMovies };
+export { popularMovies, renderMovies };
